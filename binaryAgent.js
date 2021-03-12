@@ -1,13 +1,13 @@
 // Translated binary string to English
 
-function binaryAgent(string) {
-    var splitString = string.split(" ");
-    console.log(splitString);
+function binaryAgent(binaryString) {
+    var newStr = binaryString.split(" ");
+    console.log(newStr);
     var engText = [];
 
-    for (i = 0; i < splitString.length; i++) {
-        engText.push(String.fromCharCode(parseInt(splitString[i], 2)));
-        // pareseInt parses splitString[i] and returns integer of specified "radix" (2)
+    for (i = 0; i < newStr.length; i++) {
+        engText.push(String.fromCharCode(parseInt(newStr[i], 2)));
+        // pareseInt parses newStr[i] and returns integer of specified "radix" (2)
         // fromCharCode converts Unicode values into characters
     }
     return engText.join("");
