@@ -9,6 +9,9 @@ class linkedList {
     constructor(head = null) {
         this.head = head
     }
+    getFirst() {
+        return this.head;
+    }
     size() {
         let count = 0;
         let node = this.head;
@@ -26,6 +29,9 @@ class linkedList {
             }
         }
         return lastNode;
+    }
+    clear() { //empty linkedlist
+        this.head = null;
     }
 }
 
