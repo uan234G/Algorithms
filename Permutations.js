@@ -1,4 +1,4 @@
-function Permutator(inputArr) {
+function Permutator(arr) {
     let result = [];
 
     function Permute(arr, m = []) {
@@ -13,7 +13,7 @@ function Permutator(inputArr) {
         }
     }
 
-    Permute(inputArr);
+    Permute(arr);
 
     return result;
 };
