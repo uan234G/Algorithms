@@ -57,16 +57,16 @@ class linkedList {
 // console.log(list.getLast().val); //return miles
 
 //getaverage
-let node1 = new Node(3);
-let node2 = new Node(2);
-let node3 = new Node(3);
-let node4 = new Node(4);
-let node5 = new Node(5);
+let node1 = new Node(3),
+    node2 = new Node(2),
+    node3 = new Node(3),
+    node4 = new Node(4),
+    node5 = new Node(5);
 node1.next = node2;
 node2.next = node3;
 node3.next = node4;
 node4.next = node5;
 node5.next = null;
 let list = new linkedList(node1);
-let avgv = list.getAverage();
-console.log(avgv);
+let avg = list.getAverage();
+console.log(avg);
