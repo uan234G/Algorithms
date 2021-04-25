@@ -14,7 +14,7 @@ function ZipArr(keys, values) {
     return hashMap;
 }
 
-const keys1 = [1, 2, 3];
-const values1 = ["one", "two", "three"];
+const keys1 = ["one", "two", "three"];
+const values1 = [1, 2, 3];
 
 console.log(ZipArr(keys1, values1));
