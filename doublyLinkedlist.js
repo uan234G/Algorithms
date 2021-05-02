@@ -29,4 +29,17 @@ class DoublyLinkedList {
         return this
 
     }
+    insertAtFront(data) {
+        const newNode = new Node(data);
+
+        if (!this.head) {
+            this.head = this.tail = newNode;
+        } else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        return this;
+    }
+
 }
