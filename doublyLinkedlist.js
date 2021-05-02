@@ -14,6 +14,11 @@ class DoublyLinkedList {
         this.tail = null;
     }
 
+    // determine if a list is empty
+    isEmpty() {
+        return this.head === null;
+    }
+
     insertAtBack(data) {
         const newTail = new Node(data);
 
@@ -40,6 +45,16 @@ class DoublyLinkedList {
             this.head = newNode;
         }
         return this;
+    }
+
+    toArray() {
+        const newArray = [];
+        let runner = this.head;
+        thile(runner){
+            newArray.push(runner.data);
+            runner = runner.next;
+        }
+        return newArray;
     }
 
 }
