@@ -50,11 +50,18 @@ class DoublyLinkedList {
     toArray() {
         const newArray = [];
         let runner = this.head;
-        thile(runner){
+        while (runner) {
             newArray.push(runner.data);
             runner = runner.next;
         }
         return newArray;
+    }
+
+    seedFromArray(items = []) {
+        items.forEach((item) => {
+            this.insertAtBack(item);
+        });
+        return this;
     }
 
 }
