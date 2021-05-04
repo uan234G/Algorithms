@@ -64,4 +64,28 @@ class DoublyLinkedList {
         return this;
     }
 
+    // remove middle node
+    removeMiddle() {
+
+        let forwardRunner = this.head;
+        let backwardsRunner = this.tail;
+
+        while (forwardRunner && backwardsRunner) {
+            if (forwardRunner === backwardsRunner) {
+                const midNode = forwardRunner;
+                midNode.prev.next = midNode.next;
+                midNode.next.prev = midNode.prev;
+                return midNode.data;
+            }
+
+            // runners passed each other without stopping on the same node, even length, we can exit early
+            if (forwardRunner.prev === backwardsRunner) {
+                return null;
+            }
+
+            forwardRunner = forwardRunner.next;
+            backwardsRunner = backwardsRunner.prev;
+        }
+        return null;
+    }
 }
