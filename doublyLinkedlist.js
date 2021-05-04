@@ -66,6 +66,12 @@ class DoublyLinkedList {
 
     // remove middle node
     removeMiddle() {
+        if (!this.isEmpty() && this.head === this.tail) {
+            const removedData = this.head.data;
+            this.head = null;
+            this.tail = null;
+            return removedData;
+        }
 
         let forwardRunner = this.head;
         let backwardsRunner = this.tail;
