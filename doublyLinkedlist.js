@@ -94,4 +94,36 @@ class DoublyLinkedList {
         }
         return null;
     }
+
+    // Inserts a new node with the given newVal after the node that has the
+    //    * given targetVal as it's data.
+    insertAfter(targetVal, newVal) {
+        if (this.isEmpty()) {
+            return false;
+        }
+
+        let runner = this.head;
+        // runner && is in case runner becomes null so we don't check null.data
+        while (runner && runner.data !== targetVal) {
+            runner = runner.next;
+        }
+
+        if (runner === null) {
+            return false;
+        }
+
+        const newNode = new Node(newVal);
+        newNode.prev = runner;
+        newNode.next = runner.next;
+
+        if (runner === this.tail) {
+            this.tail = newNode;
+        } else {
+            // if runner was tail then next would be null.
+            runner.next.prev = newNode;
+        }
+
+        runner.next = newNode;
+        return true;
+    }
 }
