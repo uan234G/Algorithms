@@ -20,5 +20,17 @@ class Stack {
     constructor(items = []) {
         this.items = items;
     }
+    push(item) {
+        this.items.push(item);
+        return this.size();
+    }
+
+    pop() {
+        return this.items.pop();
+    }
+
+    peek() {
+        return this.items[this.items.length - 1];
+    }
 
 }
