@@ -25,21 +25,21 @@ function monthRange(start, end) {
     return months;
 }
 
-function monthRange(start, end) {
-    if (!(start > 0 && end > 0 && start <= 12 && end <= 12)) {
-        return [];
-    }
+// function monthRange(start, end) {
+//     if (!(start > 0 && end > 0 && start <= 12 && end <= 12)) {
+//         return [];
+//     }
 
-    if (start === end) {
-        return [start];
-    }
+//     if (start === end) {
+//         return [start];
+//     }
 
-    const months = [];
-    const count = start < end ? end - start : 12 - start + end;
+//     const months = [];
+//     const count = start < end ? end - start : 12 - start + end;
 
-    for (let n = start, i = 0; i < count + 1; n++, i++) {
-        months.push(n === 12 ? 12 : n % 12);
-    }
+//     for (let n = start, i = 0; i < count + 1; n++, i++) {
+//         months.push(n === 12 ? 12 : n % 12);
+//     }
 
-    return months;
-}
+//     return months;
+// }
