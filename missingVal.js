@@ -22,3 +22,68 @@ const expected3 = -1;
 
 const nums4 = [5, 2, 7, 8, 4, 9, 3];
 const expected4 = 6;
+
+
+/************************************************************ */
+
+function missingValue(unorderedNums) {
+    if (unorderedNums.length < 1) {
+        return null;
+    }
+
+    let min = unorderedNums[0];
+    let max = unorderedNums[0];
+    let sum = 0;
+    let expectedSum = 0;
+
+    for (const n of unorderedNums) {
+        if (n < min) {
+            min = n;
+        }
+        if (n > max) {
+            max = n;
+        }
+        sum += n;
+    }
+
+    for (let i = min; i <= max; i++) {
+        expectedSum += i;
+    }
+    return sum === expectedSum ? null : expectedSum - sum;
+}
+
+/**
+ * - Time: O(n) linear.
+ * - Space: O(n) linear.
+ */
+function missingValueSeenTable(unorderedNums) {
+    if (unorderedNums.length < 1) {
+        return null;
+    }
+
+    const seen = {};
+    let min = unorderedNums[0];
+    let max = unorderedNums[0];
+
+    for (let i = 0; i < unorderedNums.length; i++) {
+        if (!seen[unorderedNums[i]]) {
+            seen[unorderedNums[i]] = true;
+        }
+        if (unorderedNums[i] < min) {
+            min = unorderedNums[i];
+        }
+        if (unorderedNums[i] > max) {
+            max = unorderedNums[i];
+        }
+    }
+
+    let val = min + 1;
+
+    while (val < max) {
+        if (!seen[val]) {
+            return val;
+        }
+        val += 1;
+    }
+    return null;
+}
