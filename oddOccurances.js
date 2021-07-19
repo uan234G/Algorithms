@@ -5,3 +5,21 @@
  * - Time: O(2n) -> O(n) linear.
  * - Space: O(n) linear.
  */
+
+function oddOccurrencesInArray(nums) {
+    const freqMap = new Map();
+
+    for (const n of nums) {
+        if (freqMap.has(n)) {
+            freqMap.set(n, freqMap.get(n) + 1);
+        } else {
+            freqMap.set(n, 1);
+        }
+    }
+
+    for (const [n, count] of freqMap) {
+        if (count % 2 !== 0) {
+            return n;
+        }
+    }
+}
