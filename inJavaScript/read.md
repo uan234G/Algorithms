@@ -17,9 +17,9 @@ Popular Algorithm Questions:
         Given a string of characters as input, write a function that returns it with the characters reversed.
 2. Palindrome
         A palindrome is a word or phrase that reads the same backward as forward. Write a function that checks for this.    
-<!-- 3. Integer Reversal
+3. Integer Reversal
         Given an integer, reverse the order of the digits.
 4. Fizz Buzz
         Given a number as an input, print out every integer from 1 to that number. However, when the integer is divisible by 2, print out “Fizz”; when it’s divisible by 3, print out “Buzz”; when it’s divisible by both 2 and 3, print out “Fizz Buzz”.
 5. Max Character
-        Given a string of characters, return the character that appears the most often. -->
+        Given a string of characters, return the character that appears the most often.
